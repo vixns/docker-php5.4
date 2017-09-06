@@ -1,6 +1,13 @@
 #!/bin/sh
 set -e
 
+cat > /etc/ssmtp/ssmtp.conf << EOF
+root=noc@vixns.net
+mailhub=${SMTP_HOST}
+hostname=$(hostname)
+FromLineOverride=YES
+EOF
+
 # first arg is `-f` or `--some-option`
 if [ "${1#-}" != "$1" ]; then
 	set -- php-fpm "$@"
