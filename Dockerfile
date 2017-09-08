@@ -197,6 +197,8 @@ mysql mysqli pdo pdo_mysql pdo_sqlite soap xml zip \
 && docker-php-ext-enable apc imagick opcache \
 && echo "pdo_mysql.default_socket=/var/run/mysqld/mysqld.sock" >> /usr/local/etc/php/conf.d/local.ini \
 && echo "mysqli.default_socket=/var/run/mysqld/mysqld.sock" >> /usr/local/etc/php/conf.d/local.ini \
-&& echo "mysql.default_socket=/var/run/mysqld/mysqld.sock" >> /usr/local/etc/php/conf.d/local.ini 
+&& echo "mysql.default_socket=/var/run/mysqld/mysqld.sock" >> /usr/local/etc/php/conf.d/local.ini  \
+&& echo "memory_limit=128M" >> /usr/local/etc/php/conf.d/local.ini \
+&& echo "sendmail_path=\"/usr/sbin/sendmail -t\"" >> /usr/local/etc/php/conf.d/local.ini 
 
 CMD ["php-fpm"]
