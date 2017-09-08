@@ -193,7 +193,7 @@ mysql mysqli pdo pdo_mysql pdo_sqlite soap xml zip \
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
 && docker-php-ext-install -j$(nproc) gd imap \
-&& pecl install apc imagick \
-&& docker-php-ext-enable apc imagick
+&& pecl install apc imagick zendopcache \
+&& docker-php-ext-enable apc imagick opcache
 
 CMD ["php-fpm"]
