@@ -193,8 +193,8 @@ mysql mysqli pdo pdo_mysql pdo_sqlite soap xml zip \
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
 && docker-php-ext-install -j$(nproc) gd imap \
-&& pecl install apc imagick zendopcache \
-&& docker-php-ext-enable apc imagick opcache \
+&& pecl install imagick zendopcache \
+&& docker-php-ext-enable imagick opcache \
 && echo "pdo_mysql.default_socket=/var/run/mysqld/mysqld.sock" >> /usr/local/etc/php/conf.d/local.ini \
 && echo "mysqli.default_socket=/var/run/mysqld/mysqld.sock" >> /usr/local/etc/php/conf.d/local.ini \
 && echo "mysql.default_socket=/var/run/mysqld/mysqld.sock" >> /usr/local/etc/php/conf.d/local.ini  \
