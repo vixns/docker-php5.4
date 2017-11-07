@@ -186,6 +186,7 @@ libsqlite3-dev \
 libxml2-dev \
 libkrb5-dev \
 libmagickwand-dev \
+ghostscript \
 && rm -rf /var/lib/apt/lists/* \
 && docker-php-ext-install -j$(nproc) \
 bcmath curl exif fileinfo iconv intl json mcrypt \
